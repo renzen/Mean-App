@@ -1,0 +1,72 @@
+<div>
+  <div style="display: block">
+   <canvas baseChart
+           [datasets]="barChartData"
+           [labels]="barChartsLabels"
+           [options]="barChartOptions"
+           [legend]="barChartLegend"
+           [chartType]="barChartType"
+           [colors]="colors">
+   </canvas>
+
+  </div>
+</div>
+
+<br/>
+<br/>
+
+
+<div>
+    <div style="display: block">
+     <canvas baseChart
+             [data]="donutChartData"
+             [labels]="donutChartsLabels"
+             [options]="donutChartOptions"
+             [legend]="donutChartLegend"
+             [chartType]="donutChartType"
+             [colors]="colors">
+     </canvas>
+  
+    </div>
+  </div>
+
+  <br/>
+  <br/>
+
+  <div>
+      <div style="display: block">
+       <canvas baseChart
+               [data]="pieChartData"
+               [labels]="pieChartsLabels"
+               [options]="pieChartOptions"
+               [legend]="pieChartLegend"
+               [chartType]="pieChartType"
+               [colors]="colors">
+       </canvas>
+    
+      </div>
+    </div>
+
+
+
+    <div class="container">
+        <!--hello name="{{ name }}"></hello-->
+        <h1>Hello</h1>
+	<div class="d-flex">
+		<div class="col">
+			<div class="card">
+				<div class="card-body p-1 m-0">
+					<canvas id="canvas"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+        <canvas id="canvas">{{ chart }}</canvas>
+     

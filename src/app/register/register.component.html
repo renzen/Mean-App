@@ -1,0 +1,92 @@
+<!-- <div class="py-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <span class="anchor" id="formLogin"></span>
+
+      <!-- form card login -->
+      <!-- <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Register</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registerForm" class="form">
+            <div class="form-group">
+              <label for="uname1">Username</label>
+              <input type="text" [(ngModel)]="registerUserData.email" name="email" class="form-control rounded-0" required>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password"  [(ngModel)]="registerUserData.password" name="password" class="form-control rounded-0"  required>
+            </div>
+            <button type="button" (click)="registerUser()" class="btn btn-primary float-right">Register</button>
+          </form>
+        </div> -->
+        <!--/card-block-->
+      <!-- </div> -->
+      <!-- /form card login -->
+
+    <!-- </div>
+
+  </div>
+</div> --> 
+
+<div class="py-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <span class="anchor" id="formLogin"></span>
+
+      <!-- form card login -->
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Register Reactive Forms</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registerForm">
+            
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" formControlName="email">
+              <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors['required']">Email is required</div>
+                <div *ngIf="email.errors['email']">Email must be a valid email address</div>
+                <div *ngIf="registerForm.get('email').errors?.userNameExists">Email already exists</div>
+              </div>
+             
+                <span *ngIf="registerForm.get('email').pending"> Searching...</span>
+             
+            </div>
+            
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password">
+                <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                <div *ngIf="password.errors['required']">Password is required</div>
+                <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
+                <!-- <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                  Password is required -->
+                </div> 
+                </div>
+                <button type="button" [disabled]="registerForm.invalid" class="btn btn-primary float-right" (click)="onSubmit(registerForm.value)">Register
+                  <!-- <span *ngIf="registerForm.get('email').errors?.userNameExists">........</span--></button> 
+          </form>
+        </div> 
+        <!--/card-block-->
+       </div>
+      <!-- /form card login -->
+
+      <br/>
+      <div class="container">
+          <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">Form Status: {{ registerForm.status }}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted"> Form value</h6>
+                      <pre>{{ registerForm.value | json }}</pre>
+                  </div>
+              </div>
+    
+    </div>
+
+    </div>
+
+  </div>
+</div> 
